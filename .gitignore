@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VirtualBox
+*.vdi
+*.vbox
+*.vbox-prev
+
+# Wazuh
+wazuh-install-files.tar

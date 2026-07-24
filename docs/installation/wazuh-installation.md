@@ -1,48 +1,58 @@
 # Wazuh Installation Guide
 
-## Overview
+## Environment
 
-This document describes the deployment of a Wazuh SIEM environment using Ubuntu 24.04 LTS inside Oracle VirtualBox.
-
----
-
-## Lab Environment
-
-| Component | Details |
+| Component | Version |
 |-----------|---------|
 | Host OS | Windows 11 |
-| Hypervisor | Oracle VirtualBox 7 |
+| Hypervisor | Oracle VirtualBox |
 | SIEM Server | Ubuntu 24.04 LTS |
-| SIEM Platform | Wazuh 4.12 |
+| Wazuh | 4.12 |
 | Endpoint | Windows 11 |
-| Logging Tool | Sysmon |
+| Log Source | Sysmon |
 
 ---
 
-## Virtual Machine Configuration
+## Prerequisites
 
-| Resource | Value |
-|----------|------|
-| RAM | 8 GB |
-| CPU | 4 Cores |
-| Disk | 40 GB |
-| Network | Bridged Adapter |
-
----
-
-## Installation Status
-
-- [x] Ubuntu Installed
-- [x] Guest Additions Installed
-- [x] SSH Configured
-- [ ] Wazuh Indexer
-- [ ] Wazuh Manager
-- [ ] Wazuh Dashboard
-- [ ] Windows Agent
-- [ ] Sysmon
+- Oracle VirtualBox installed
+- Ubuntu 24.04 LTS virtual machine
+- Internet connection
+- Minimum 4 CPU cores
+- Minimum 8 GB RAM
+- Minimum 80 GB storage
 
 ---
 
-## Notes
+## Installation Steps
 
-The remaining sections will be updated as the installation progresses.
+### 1. Create Ubuntu Virtual Machine
+
+- Install Ubuntu 24.04 LTS
+- Update the system
+
+### 2. Install Guest Additions
+
+- Enable shared clipboard
+- Enable dynamic display resizing
+
+### 3. Configure Networking
+
+- Configure VirtualBox networking
+- Verify internet connectivity
+
+### 4. Install Wazuh
+
+Install the Wazuh All-in-One server.
+
+> Installation screenshots will be added after deployment is complete.
+
+---
+
+## Next Steps
+
+- Install Wazuh Agent
+- Install Sysmon
+- Verify agent connection
+- Generate security events
+- Investigate alerts

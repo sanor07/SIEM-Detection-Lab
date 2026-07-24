@@ -1,28 +1,42 @@
 # SIEM Detection Lab
 
-A hands-on Security Information and Event Management (SIEM) lab built using **Wazuh**, **Ubuntu 24.04**, **Windows 11**, **Sysmon**, and **Oracle VirtualBox**.
+A hands-on Security Information and Event Management (SIEM) lab built using **Wazuh**, **Ubuntu 24.04 LTS**, **Windows 11**, **Sysmon**, and **Oracle VirtualBox**.
 
-This project demonstrates how to deploy a SIEM environment, collect endpoint telemetry, detect security events, and investigate attacks in a controlled virtual lab.
+This project demonstrates how to deploy a complete SIEM environment, collect endpoint telemetry, detect security events, and investigate attacks in a controlled virtual lab.
 
-## Project Objectives
+---
+
+# Project Objectives
 
 - Deploy a complete Wazuh SIEM environment.
-- Configure Windows endpoint monitoring using Sysmon.
+- Monitor Windows endpoints using Sysmon.
 - Collect and analyze security logs.
-- Simulate real-world cyber attacks.
+- Simulate cyber attacks.
 - Create custom detection rules.
-- Investigate alerts using the Wazuh Dashboard.
+- Investigate alerts through the Wazuh Dashboard.
 - Map detections to the MITRE ATT&CK Framework.
 
-## Project Status
+# Features
 
-- [x] Ubuntu Installation
-- [x] VirtualBox Configuration
-- [x] Guest Additions
-- [x] SSH Configuration
-- [ ] Wazuh Installation
-- [ ] Windows Agent
-- [ ] Sysmon Configuration
-- [ ] Attack Simulations
-- [ ] Custom Detection Rules
-- [ ] Dashboard Analysis
+- Wazuh SIEM Deployment
+- Ubuntu 24.04 Server
+- Windows 11 Endpoint
+- Sysmon Integration
+- Log Collection
+- Security Monitoring
+- Alert Investigation
+- Attack Simulation
+- MITRE ATT&CK Mapping
+
+# Technology Stack
+
+| Component | Technology |
+|-----------|------------|
+| SIEM | Wazuh 4.12 |
+| Operating System | Ubuntu 24.04 LTS |
+| Endpoint | Windows 11 |
+| Log Collection | Sysmon |
+| Virtualization | Oracle VirtualBox |
+| Version Control | Git |
+| Repository | GitHub |
+

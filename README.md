@@ -40,3 +40,42 @@ This project demonstrates how to deploy a complete SIEM environment, collect end
 | Version Control | Git |
 | Repository | GitHub |
 
+# Lab Architecture
+
+The SIEM Detection Lab consists of the following components:
+
+- **Ubuntu 24.04 LTS** running Wazuh Manager, Wazuh Indexer, and Wazuh Dashboard.
+- **Windows 11** endpoint monitored by the Wazuh Agent.
+- **Sysmon** for advanced Windows event logging.
+- **Oracle VirtualBox** for virtualization.
+- **GitHub** for project documentation and version control.
+
+> A detailed architecture diagram will be added after the deployment is complete.
+
+# Repository Structure
+
+```text
+SIEM-Detection-Lab/
+│
+├── assets/
+├── configs/
+├── docs/
+├── logs/
+├── screenshots/
+├── scripts/
+├── README.md
+├── LICENSE
+└── .gitignore
+```
+# Project Progress
+
+- [x] Ubuntu 24.04 Installation
+- [x] VirtualBox Configuration
+- [x] Guest Additions
+- [x] SSH Configuration
+- [ ] Wazuh Installation
+- [ ] Windows Agent Deployment
+- [ ] Sysmon Installation
+- [ ] Attack Simulation
+- [ ] Custom Detection Rules
+- [ ] Dashboard Analysis

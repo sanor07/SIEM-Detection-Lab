@@ -48,7 +48,7 @@ As the project progresses, this document will include:
 | Detection 01 - Account Discovery | T1087 | 92031 | ✅ Completed |
 | Detection 02 - PowerShell Execution | T1059.001 | 92027 | ✅ Completed |
 | Detection 03 - Base64 Encoded PowerShell | T1059.001 | 92057 | ✅ Completed |
-| Detection 04 - High Severity Alert Investigation | Rule 92213 | Pending | ⏳ |
+| Detection 04 - High Severity Alert Investigation | T1105 | 92213 | ✅ Completed |
 | Detection 05 - Persistence Techniques | T1547 | Planned | ⏳ |
 | Detection 06 - File Integrity Monitoring | T1070 | Planned | ⏳ |
 | Detection 07 - Brute Force Detection | T1110 | Planned | ⏳ |

@@ -2,143 +2,129 @@
 
 ## Overview
 
-This detection demonstrates how Wazuh and Sysmon identify PowerShell processes executing Base64-encoded commands. Attackers frequently use encoded PowerShell commands to obfuscate malicious scripts and evade simple detection mechanisms.
-
-This activity was successfully detected by Wazuh and mapped to the MITRE ATT&CK framework.
+This detection demonstrates how Wazuh and Sysmon identify PowerShell processes executing Base64-encoded commands. Attackers frequently use Base64 encoding to obfuscate PowerShell commands and evade basic detection mechanisms.
 
 ---
 
 ## Objective
 
-- Simulate an attacker executing an encoded PowerShell command.
-- Verify Sysmon captures the process creation event.
-- Confirm Wazuh generates the appropriate security alert.
-- Analyze the event and map it to MITRE ATT&CK.
+- Simulate encoded PowerShell execution.
+- Verify Sysmon Event ID 1 logging.
+- Validate Wazuh detection.
+- Map the activity to MITRE ATT&CK.
 
 ---
 
 ## Lab Environment
 
 | Component | Value |
-|----------|-------|
+|-----------|-------|
 | SIEM | Wazuh 4.12 |
-| Operating System | Ubuntu 24.04 LTS |
+| Manager | Ubuntu 24.04 |
 | Endpoint | Windows 10 VM |
-| Monitoring Tool | Sysmon |
-| Event Source | Microsoft-Windows-Sysmon |
+| Monitoring | Sysmon |
 
 ---
 
 ## Attack Simulation
 
-### Step 1: Generate a Base64 Encoded Command
+Generate a Base64 encoded command.
 
 ```powershell
-$command = 'Get-Process'
-$bytes = [System.Text.Encoding]::Unicode.GetBytes($command)
-$encoded = [Convert]::ToBase64String($bytes)
+$command='Get-Process'
+$bytes=[System.Text.Encoding]::Unicode.GetBytes($command)
+$encoded=[Convert]::ToBase64String($bytes)
 $encoded
 ```
 
-### Step 2: Execute the Encoded Command
+Execute:
 
 ```powershell
 powershell.exe -EncodedCommand <Base64_String>
 ```
 
-Example:
-
-```powershell
-powershell.exe -EncodedCommand RwBlAHQALQBQAHIAbwBjAGUAcwBzAA==
-```
-
 ---
 
-## Detection
-
-Wazuh generated the following alert after the encoded PowerShell command was executed.
+## Detection Details
 
 | Field | Value |
-|------|------|
+|-------|-------|
 | Rule ID | 92057 |
 | Severity | 12 |
+| Event Source | Sysmon Event ID 1 |
 | Description | PowerShell.exe spawned a PowerShell process which executed a Base64 encoded command |
-| Decoder | windows_eventchannel |
-| Source | Microsoft-Windows-Sysmon |
 
 ---
 
-## MITRE ATT&CK Mapping
+## MITRE ATT&CK
 
 | Category | Value |
 |----------|-------|
 | Tactic | Execution |
 | Technique | T1059.001 |
-| Technique Name | PowerShell |
+| Name | PowerShell |
 
 ---
 
 ## Evidence
 
-### Process Image
+Executable
 
 ```
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 ```
 
-### Command Line
+Command Line
 
-```powershell
+```
 powershell.exe -EncodedCommand <Base64_String>
 ```
 
-### Parent Process
+Parent Process
 
 ```
 powershell.exe
 ```
 
-### User
+User
 
 ```
-WINDOWS11\vbxouser
+WINDOWS\vbxouser
 ```
 
 ---
 
 ## Screenshots
 
-### Alert Overview
+### Detection Alert
 
-![Encoded PowerShell Alert](../../screenshots/detection/03-encoded-powershell-alert.png)
+![Alert](../../screenshots/detection/03-encoded-powershell-alert.png)
 
 ### Event Details
 
-![Encoded PowerShell Details](../../screenshots/detection/03-encoded-powershell-details.png)
+![Details](../../screenshots/detection/03-encoded-powershell-details.png)
 
 ---
 
-## Security Analysis
+## Analysis
 
-PowerShell supports executing commands that are encoded using Base64 through the `-EncodedCommand` parameter. This technique is widely used by attackers because it obscures the original command, making it more difficult to identify through basic command-line inspection.
+PowerShell supports the `-EncodedCommand` parameter, allowing commands to be executed using Base64 encoding. This technique is frequently observed in malware and red-team activities because it hides the original command from casual inspection.
 
-Sysmon captured the process creation event and forwarded it to the Wazuh Manager. Wazuh correlated the event with its detection rules and generated **Rule 92057**, identifying the execution of a Base64-encoded PowerShell command.
-
-This behavior aligns with **MITRE ATT&CK Technique T1059.001 (PowerShell)** under the **Execution** tactic.
+Sysmon recorded the process creation event and Wazuh correlated it with Rule 92057, correctly identifying the execution of an encoded PowerShell command.
 
 ---
 
 ## Learning Outcomes
 
-- Generated Base64-encoded PowerShell commands.
-- Simulated attacker command obfuscation.
-- Verified Sysmon Event ID 1 process creation logging.
-- Validated Wazuh detection capabilities.
-- Performed MITRE ATT&CK mapping.
-- Collected forensic evidence for security analysis.
+- Encoded PowerShell execution
+- Sysmon Event ID 1 analysis
+- Wazuh rule correlation
+- MITRE ATT&CK mapping
+- Threat hunting
+- Security event analysis
 
 ---
 
 ## Result
 
-The simulated encoded PowerShell execution was successfully detected by Wazuh. Sysmon recorded the process creation event, and Wazuh generated **Rule 92057 (Severity Level 12)**, correctly identifying the use of a Base64-encoded PowerShell command. This confirms that the SIEM environment can detect common attacker techniques involving PowerShell command obfuscation.
+The encoded PowerShell command was successfully detected by Wazuh using Sysmon telemetry and mapped to MITRE ATT&CK Technique T1059.001.

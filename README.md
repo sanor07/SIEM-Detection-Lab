@@ -1,13 +1,22 @@
-# 🛡️ SIEM Detection Lab
+<p align="center">
+  <img src="assets/banner.png" alt="SIEM Detection Engineering Lab Banner" width="100%">
+</p>
 
-> A hands-on Security Information and Event Management (SIEM) lab built using **Wazuh**, **Sysmon**, **Windows 10**, and **Ubuntu Server** to simulate real-world attack techniques, investigate security events, and map detections to the **MITRE ATT&CK Framework**.
+<h1 align="center">🛡️ SIEM Detection Engineering Lab</h1>
 
-![GitHub last commit](https://img.shields.io/github/last-commit/sanor07/SIEM-Detection-Lab?style=for-the-badge)
-![GitHub repo size](https://img.shields.io/github/repo-size/sanor07/SIEM-Detection-Lab?style=for-the-badge)
-![GitHub stars](https://img.shields.io/github/stars/sanor07/SIEM-Detection-Lab?style=for-the-badge)
-![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-red?style=for-the-badge)
+<p align="center">
+A hands-on Security Information and Event Management (SIEM) lab using <b>Wazuh</b>, <b>Sysmon</b>, <b>Windows 10</b>, and <b>Ubuntu</b> to simulate attacks, investigate security events, and map detections to the MITRE ATT&CK framework.
+</p>
+
+<p align="center">
+
 ![Wazuh](https://img.shields.io/badge/Wazuh-4.12-blue?style=for-the-badge)
+![Sysmon](https://img.shields.io/badge/Sysmon-15-success?style=for-the-badge)
+![Windows](https://img.shields.io/badge/Windows-10-0078D6?style=for-the-badge)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-E95420?style=for-the-badge)
+![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-red?style=for-the-badge)
 
+</p>
 ---
 
 # 📌 Project Overview

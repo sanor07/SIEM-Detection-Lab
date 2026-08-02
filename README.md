@@ -17,7 +17,6 @@ A hands-on Security Information and Event Management (SIEM) lab using <b>Wazuh</
 ![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-red?style=for-the-badge)
 
 </p>
----
 
 # 📌 Project Overview
 

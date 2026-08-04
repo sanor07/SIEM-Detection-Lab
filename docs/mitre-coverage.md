@@ -13,7 +13,7 @@ This document maps the detections implemented in this SIEM Detection Engineering
 | T1027 | Obfuscated / Encoded Files or Information | Defense Evasion | Encoded PowerShell Detection | ✅ |
 | T1105 | Ingress Tool Transfer | Command and Control | High Severity Investigation | ✅ |
 | T1570 | Lateral Tool Transfer | Lateral Movement | Executable File Creation Detection | ✅ |
-| T1105 | PowerShell Download Cradle | Command and Control | Planned Detection | 🚧 |
+| T1105 | PowerShell Download Cradle | Command and Control | Planned Detection | ✅ |
 
 ---
 

@@ -33,7 +33,6 @@ The lab focuses on:
 - Detection documentation
 
 Every detection includes:
-
 - Attack simulation
 - Wazuh alert
 - Investigation
